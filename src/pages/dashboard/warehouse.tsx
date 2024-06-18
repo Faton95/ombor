@@ -9,9 +9,7 @@ export default function Page() {
         <title> Dashboard: Six</title>
       </Helmet>
 
-      <div>
-        Warehouse
-      </div>
+      <div>Warehouse env change</div>
     </>
   );
 }
