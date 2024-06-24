@@ -3,6 +3,11 @@
 export function emptyRows(page: number, rowsPerPage: number, arrayLength: number) {
   return page ? Math.max(0, (1 + page) * rowsPerPage - arrayLength) : 0;
 }
+// ----------------------------------------------------------------------
+
+export function rowInPage<T>(data: T[], page: number, rowsPerPage: number) {
+  return data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
+}
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (a[orderBy] === null) {

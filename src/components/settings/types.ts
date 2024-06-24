@@ -21,4 +21,5 @@ export type SettingsContextProps = SettingsValueProps & {
   open: boolean;
   onToggle: VoidFunction;
   onClose: VoidFunction;
+  compactLayout: boolean;
 };
