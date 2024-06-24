@@ -1,3 +1,4 @@
+import { _id } from 'src/_mock/assets';
 // ----------------------------------------------------------------------
 
 const ROOTS = {
@@ -6,7 +7,9 @@ const ROOTS = {
 };
 
 // ----------------------------------------------------------------------
+const MOCK_ID = _id[1];
 
+// -----------------------------------------------------------------------
 export const paths = {
   minimalUI: 'https://mui.com/store/items/minimal-dashboard/',
   // AUTH
@@ -31,5 +34,12 @@ export const paths = {
     customer: `${ROOTS.DASHBOARD}/customer`,
     users: `${ROOTS.DASHBOARD}/users`,
     delivery: `${ROOTS.DASHBOARD}/delivery`,
+  },
+  order: {
+    root: `${ROOTS.DASHBOARD}/order`,
+    details: (id: string) => `${ROOTS.DASHBOARD}/order/${id}`,
+    demo: {
+      details: `${ROOTS.DASHBOARD}/order/${MOCK_ID}`,
+    },
   },
 };

@@ -21,3 +21,13 @@ export interface MenuPopoverProps extends Omit<PopoverProps, 'open'> {
   arrow?: MenuPopoverArrowValue;
   hiddenArrow?: boolean;
 }
+
+// --------------------------------------------------------------
+export type UsePopoverReturn = {
+  open: PopoverProps['open'];
+  anchorEl: PopoverProps['anchorEl'];
+  onClose: () => void;
+  onOpen: (event: React.MouseEvent<HTMLElement>) => void;
+  setAnchorEl: React.Dispatch<React.SetStateAction<PopoverProps['anchorEl']>>;
+};
+
