@@ -9,7 +9,6 @@ import TableBody from '@mui/material/TableBody';
 
 import { paths } from 'src/routes/paths';
 
-import { useBoolean } from 'src/hooks/use-boolean';
 import { useSetState } from 'src/hooks/use-set-state';
 
 import { fIsAfter, fIsBetween } from 'src/utils/format-time';
@@ -61,8 +60,6 @@ const TABLE_HEAD = [
 export function OrderListView() {
   const table = useTable({ defaultOrderBy: 'orderNumber' });
 
-  const confirm = useBoolean();
-
   const [tableData, setTableData] = useState<any>(_orders);
 
   const filters = useSetState({
@@ -101,27 +98,6 @@ export function OrderListView() {
       table.onUpdatePageDeleteRow(dataInPage.length);
     },
     [dataInPage.length, table, tableData]
-  );
-
-  const handleDeleteRows = useCallback(() => {
-    const deleteRows = tableData.filter((row: any) => !table.selected.includes(row.id));
-
-    toast.success('Delete success!');
-
-    setTableData(deleteRows);
-
-    table.onUpdatePageDeleteRows({
-      totalRowsInPage: dataInPage.length,
-      totalRowsFiltered: dataFiltered.length,
-    });
-  }, [dataFiltered.length, dataInPage.length, table, tableData]);
-
-  const handleFilterStatus = useCallback(
-    (event: React.SyntheticEvent, newValue: string) => {
-      table.onResetPage();
-      filters.setState({ status: newValue });
-    },
-    [filters, table]
   );
 
   return (

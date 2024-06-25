@@ -1,8 +1,5 @@
-// import Lottie from 'lottie-react';
-
 import { Box } from '@mui/material';
 import Stack from '@mui/material/Stack';
-// import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import { useResponsive } from 'src/hooks/use-responsive';
@@ -11,7 +8,6 @@ import { bgGradient } from 'src/theme/css';
 
 import Logo from 'src/components/logo';
 
-// import animation from './animation.json';
 // ----------------------------------------------------------------------
 
 type Props = {
@@ -70,23 +66,9 @@ export default function AuthClassicLayout({ children, image, title }: Props) {
         {title || 'Ombor'}
       </Typography> */}
 
-      {/* <Lottie animationData={animation} style={{ height: '700px', width: 'auto' }} /> */}
-      {/* <Box
-        component="img"
-        alt="auth"
-        src={image || '/assets/illustrations/warehouse.png'}
-        sx={{
-          maxWidth: {
-            xs: 380,
-            lg: 460,
-            xl: 560,
-          },
-        }}
-      /> */}
       <Box
         component="img"
         alt="auth"
-        // src={image || '/assets/illustrations/OMBORsvg.svg'}
         src={image || '/assets/illustrations/svgOmbor.svg'}
         sx={{
           maxWidth: {
