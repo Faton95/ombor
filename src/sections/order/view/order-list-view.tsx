@@ -12,7 +12,7 @@ import { paths } from 'src/routes/paths';
 import { useBoolean } from 'src/hooks/use-boolean';
 import { useSetState } from 'src/hooks/use-set-state';
 
-import { fIsAfter } from 'src/utils/format-time';
+import { fIsAfter, fIsBetween } from 'src/utils/format-time';
 
 import { _orders, ORDER_STATUS_OPTIONS } from 'src/_mock';
 import { DashboardContent } from 'src/layouts/dashboard/main';
@@ -132,7 +132,12 @@ export function OrderListView() {
         sx={{ mb: { xs: 2, md: 1 }, ml: 3 }}
       />
 
-      <Card sx={{ m: 3 }}>
+      <Card
+        sx={{
+          m: 3,
+          boxShadow: ' rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
+        }}
+      >
         <OrderTableToolbar
           filters={filters}
           onResetPage={table.onResetPage}
@@ -235,5 +240,10 @@ function applyFilter({ inputData, comparator, filters, dateError }: ApplyFilterP
     inputData = inputData.filter((order) => order.status === status);
   }
 
+  // if (!dateError) {
+  //   if (startDate && endDate) {
+  //     inputData = inputData.filter((order) => fIsBetween(order.createdAt, startDate, endDate));
+  //   }
+  // }
   return inputData;
 }

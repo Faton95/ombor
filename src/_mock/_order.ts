@@ -24,8 +24,6 @@ export const _orders = [...Array(20)].map((_, index) => {
 
   const discount = 10;
 
-  const productName = ITEMS.map((items) => items.name);
-
   const taxes = 10;
 
   const items = (index % 2 && ITEMS.slice(0, 1)) || (index % 3 && ITEMS.slice(1, 3)) || ITEMS;
