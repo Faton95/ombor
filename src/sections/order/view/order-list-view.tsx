@@ -42,7 +42,7 @@ const STATUS_OPTIONS = [{ value: 'all', label: 'All' }, ...ORDER_STATUS_OPTIONS]
 const TABLE_HEAD = [
   { id: 'N', label: '№', width: 20 },
   { id: 'orderNumber', label: 'ID', width: 88 },
-  { id: 'name', label: 'Omborxona nomi' },
+  { id: 'name', label: 'Omborxona nomi', width: 150 },
   { id: 'picture', label: 'Rasmi' },
   { id: 'productName', label: 'Mahsulot nomi' },
   {
@@ -52,8 +52,8 @@ const TABLE_HEAD = [
     align: 'center',
   },
   { id: 'unit', label: 'Birligi' },
-  { id: 'pricePerUnit', label: 'Bir birlik narxi' },
-  { id: 'totalAmount', label: 'Umumiy narxi', width: 140 },
+  { id: 'pricePerUnit', label: 'Bir birlik narxi', width: 130 },
+  { id: 'totalAmount', label: 'Umumiy narxi', width: 130 },
 ];
 
 // ----------------------------------------------------------------------
@@ -162,7 +162,8 @@ export function OrderListView() {
                 headLabel={TABLE_HEAD}
                 rowCount={dataFiltered.length}
                 numSelected={table.selected.length}
-                onSort={table.onSort}
+                // onSort={table.onSort}
+                sx={{ bgcolor: '#F4F6F8' }}
               />
 
               <TableBody>

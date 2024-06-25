@@ -86,7 +86,8 @@ export default function AuthClassicLayout({ children, image, title }: Props) {
       <Box
         component="img"
         alt="auth"
-        src={image || '/assets/illustrations/OMBORsvg.svg'}
+        // src={image || '/assets/illustrations/OMBORsvg.svg'}
+        src={image || '/assets/illustrations/svgOmbor.svg'}
         sx={{
           maxWidth: {
             xs: '90%',
